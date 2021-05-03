@@ -2,14 +2,14 @@ import React from 'react';
 import { Formik } from 'formik';
 import { FormControl, FormLabel, Button, Input, Box, Center, Text, SimpleGrid } from "@chakra-ui/react";
 import "reflect-metadata";
-import AddUser from "../postgress/srcs/index";
+import AddUser from "../postgress/src/index";
 function App(){
 
-    const AddUserNew = (name: string, lastname: string, identification:string, born:string, email: string, password: string) => {
+   /* const AddUserNew = (name: string, lastname: string, identification:string, born:string, email: string, password: string) => {
       let date = born; 
       let newDate = new Date(date);
       AddUser(name, lastname, identification, newDate, email, password);
-    }
+    }*/
 
     return(  
       <Box position="fixed" bgGradient="linear(to-r, green.200, pink.500)" height="100%" width="100%">
@@ -31,7 +31,7 @@ function App(){
               }}
               onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
-                  AddUserNew(values.name, values.lastname, values.identification, values.born, values.email, values.password)
+                  //AddUserNew(values.name, values.lastname, values.identification, values.born, values.email, values.password)
                   alert(JSON.stringify(values, null, 2));
                   setSubmitting(false);
                 }, 400);
